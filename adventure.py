@@ -1,3 +1,4 @@
+#a simple text-based adventure(boken) game. :) 
 print("*************************")
 print('*    Welcome to Boken!   *')
 print("*************************")
