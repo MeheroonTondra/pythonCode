@@ -1,4 +1,5 @@
-#a simple text-based adventure(boken) game. :) 
+
+#a simple text-based adventure(boken) game. :)
 print("*************************")
 print('*    Welcome to Boken!   *')
 print("*************************")
@@ -25,16 +26,16 @@ print("===================")
 print("     unconcious    ")
 print("===================")
 print("\n--You wake up from an almost deep slumber to find yourself in an unknown world.--")
-#apple, jewel, portion numbers
+#apple, jewel, potion numbers
 amount = [0, 0, 0]
 apple = 0
 jewel = 0
-portion = 0
+potion = 0
 
 #bag function prints the number of
 #apple, food and jewel you have
 def bag():
-    print("apple, jewel, portion: ")
+    print("apple, jewel, potion: ")
     print(amount)
     return
 
@@ -50,9 +51,9 @@ def changejewel(n):
     bag()
     return
 
-#to update portions in the array amount
-def changeportion(n):
-    amount[2] = portion + n
+#to update potions in the array amount
+def changepotion(n):
+    amount[2] = potion + n
     bag()
     return
 
@@ -102,9 +103,9 @@ if val == '1':
     print("          _||__")
     print("         (_*_*_)")
     print("--------------------")
-    print("Also, take this portion, drink it when you decide to travel so you can hide yor presence from evil demons.")
-    print("You: Thank you. I will take the portion\n")
-    changeportion(1)
+    print("Also, take this potion, drink it when you decide to travel so you can hide yor presence from evil demons.")
+    print("You: Thank you. I will take the potion\n")
+    changepotion(1)
     print("\nYou: What are jewel used for? Can you tell me where i can get food supply?")
     print("Villager: We exchange jewel as our currency. You will need to find a job to earn some jewel.")
     print("We have apples that you can eat and also you can find apple trees everywhere.")
@@ -157,62 +158,62 @@ if val == '1':
     changejewel(30)
 
     print("\nYou: Thank you all, i shall take off now.")
-    print("Before you leave the village, you have to drink the portion.")
-    input("To drink portion press enter: \n")
+    print("Before you leave the village, you have to drink the potion.")
+    input("To drink potion press enter: \n")
 
-    changeportion(0)
+    changepotion(0)
 
-    print("\n--You pack your bag and head toward the capital. On your way you find the portion shop.--")
-    ans = input("Would you like to buy some portion? y/n: ")
+    print("\n--You pack your bag and head toward the capital. On your way you find the potion shop.--")
+    ans = input("Would you like to buy some potion? y/n: ")
     if ans == 'y':
-        print("--You go to the portion shop and ask about the portions.--")
-        print("Portion Master: Hello, there! What kind of portions would you like to buy?")
-        print("You: I am not sure. What kind of portions do you have?")
-        print("Portion Master: I sell 1:(healing portions-10 jewels each) and 2:(invisible portions--5 jewels each).")
-        buy = input("Select the type of portion you want to buy, if you want to buy both, then type both: ")
+        print("--You go to the potion shop and ask about the potions.--")
+        print("Potion Master: Hello, there! What kind of potions would you like to buy?")
+        print("You: I am not sure. What kind of potions do you have?")
+        print("Potion Master: I sell 1:(healing potions-10 jewels each) and 2:(invisible potions--5 jewels each).")
+        buy = input("Select the type of potion you want to buy, if you want to buy both, then type both: ")
         if buy == '1':
-            print("Portion Master: How many of the healing portions would you like to buy?")
-            num = input("Enter the number portions you want: ")
+            print("Potion Master: How many of the healing potions would you like to buy?")
+            num = input("Enter the number potions you want: ")
             money = 10*int(num)
-            print("Portion Master: For " + str(num) + " healing portions, your total is " + str(money) + " jewels.")
-            print("You pay the portion master.\n")
+            print("Potion Master: For " + str(num) + " healing potions, your total is " + str(money) + " jewels.")
+            print("You pay the potion master.\n")
 
             changejewel(30-money)
 
-            print("\n And take you portions.\n")
-            changeportion(int(num))
+            print("\n And take you potions.\n")
+            changepotion(int(num))
 
-            print("\nPortion Master: Thank you for coming. Come again if you need any portions.")
+            print("\nPotion Master: Thank you for coming. Come again if you need any potions.")
             print("You: Thank you.")
         elif buy == '2':
-            print("Portion Master: How many of the invisible portions would you like to buy?")
-            num = input("Enter the number portions you want: ")
+            print("Potion Master: How many of the invisible potions would you like to buy?")
+            num = input("Enter the number potions you want: ")
             money = 5*int(num)
-            print("Portion Master: For " + str(num) + " invisible portions, your total is " + str(money) + " jewels.")
-            print("You pay the portion master.\n")
+            print("Potion Master: For " + str(num) + " invisible potions, your total is " + str(money) + " jewels.")
+            print("You pay the potion master.\n")
 
             changejewel(30-money)
 
-            print("\n And take you portions.\n")
-            changeportion(int(num))
+            print("\n And take you potions.\n")
+            changepotion(int(num))
 
-            print("\nPortion Master: Thank you for coming. Come again if you need any portions.")
+            print("\nPotion Master: Thank you for coming. Come again if you need any potions.")
             print("You: Thank you.")
         elif buy == 'both':
-            print("Portion Master: How many of the healing portions would you like to buy?")
-            num1 = input("Enter the number portions you want: ")
-            print("Portion Master: How many of the invisible portions would you like to buy?")
-            num2 = input("Enter the number portions you want: ")
+            print("Potion Master: How many of the healing potions would you like to buy?")
+            num1 = input("Enter the number potions you want: ")
+            print("Potion Master: How many of the invisible potions would you like to buy?")
+            num2 = input("Enter the number potions you want: ")
             money = (10*int(num1)) + (5*int(num2))
-            print("Portion Master: For" + str(num1) + "healing portions and " + str(num2) + "invisible portions, your total is " + str(money) + " jewels.")
-            print("You pay the portion master.\n")
+            print("Potion Master: For" + str(num1) + "healing potions and " + str(num2) + "invisible potions, your total is " + str(money) + " jewels.")
+            print("You pay the potion master.\n")
 
             changejewel(30-money)
-            print("\n And take you portions.\n")
+            print("\n And take you potions.\n")
 
-            changeportion(int(num1) + int(num2))
+            changepotion(int(num1) + int(num2))
 
-            print("\nPortion Master: Thank you for coming. Come again if you need any portions.")
+            print("\nPotion Master: Thank you for coming. Come again if you need any potions.")
             print("You: Thank you.")
     else:
         print("--You continue to head to the capital.--");
@@ -221,10 +222,10 @@ if val == '1':
 #when option 2 is chosen
 elif val == '2':
     print("You: Thank you for you kindness but I think I will be able to travel on my own now.")
-    print("Villager: Alright, then take this portion. Drink it, this will hide your presence from evil demons.")
-    print("You: Thank you, i will accept the portion.\n")
+    print("Villager: Alright, then take this potion. Drink it, this will hide your presence from evil demons.")
+    print("You: Thank you, i will accept the potion.\n")
 
-    changeportion(1)
+    changepotion(1)
 
     input("\nPress enter to continue!")
     print("--You part with the villager and start to wonder around this big forest.--")
@@ -297,62 +298,62 @@ elif val == '2':
     print("You: Where is the capital? How can i go there?")
     print("Villager: Now you are in the East village. If you head to the West from here, you will reach the capital.")
     print("You: Thank you all, i shall take off now.")
-    print("Before you leave the village, you have to drink the portion.")
-    input("To drink portion press enter: \n")
+    print("Before you leave the village, you have to drink the potion.")
+    input("To drink potion press enter: \n")
 
-    changeportion(0)
+    changepotion(0)
 
-    print("\n--You pack your bag and head toward the capital. On your way you find the portion shop.--")
-    ans = input("Would you like to buy some portion? y/n: ")
+    print("\n--You pack your bag and head toward the capital. On your way you find the potion shop.--")
+    ans = input("Would you like to buy some potion? y/n: ")
     if ans == 'y':
-        print("--You go to the portion shop and ask about the portions.--")
-        print("Portion Master: Hello, there! What kind of portions would you like to buy?")
-        print("You: I am not sure. What kind of portions do you have?")
-        print("Portion Master: I sell 1:(healing portions-10 jewels each) and 2:(invisible portions--5 jewels each).")
-        buy = input("Select the type of portion you want to buy, if you want to buy both, then type both: ")
+        print("--You go to the potion shop and ask about the potions.--")
+        print("Potion Master: Hello, there! What kind of potions would you like to buy?")
+        print("You: I am not sure. What kind of potions do you have?")
+        print("Potion Master: I sell 1:(healing potions-10 jewels each) and 2:(invisible potions--5 jewels each).")
+        buy = input("Select the type of potion you want to buy, if you want to buy both, then type both: ")
         if buy == '1':
-            print("Portion Master: How many of the healing portions would you like to buy?")
-            num = input("Enter the number portions you want: ")
+            print("Potion Master: How many of the healing potions would you like to buy?")
+            num = input("Enter the number potions you want: ")
             money = 10*int(num)
-            print("Portion Master: For " + str(num) + " healing portions, your total is " + str(money) + " jewels.")
-            print("You pay the portion master.\n")
+            print("Potion Master: For " + str(num) + " healing potions, your total is " + str(money) + " jewels.")
+            print("You pay the potion master.\n")
 
             changejewel(30-money)
 
-            print("\n And take you portions.\n")
-            changeportion(int(num))
+            print("\n And take you potions.\n")
+            changepotion(int(num))
 
-            print("\nPortion Master: Thank you for coming. Come again if you need any portions.")
+            print("\nPotion Master: Thank you for coming. Come again if you need any potions.")
             print("You: Thank you.")
         elif buy == '2':
-            print("Portion Master: How many of the invisible portions would you like to buy?")
-            num = input("Enter the number portions you want: ")
+            print("Potion Master: How many of the invisible potions would you like to buy?")
+            num = input("Enter the number potions you want: ")
             money = 5*int(num)
-            print("Portion Master: For " + str(num) + " invisible portions, your total is " + str(money) + " jewels.")
-            print("You pay the portion master.\n")
+            print("Potion Master: For " + str(num) + " invisible potions, your total is " + str(money) + " jewels.")
+            print("You pay the potion master.\n")
 
             changejewel(30-money)
 
-            print("\n And take you portions.\n")
-            changeportion(int(num))
+            print("\n And take you potions.\n")
+            changepotion(int(num))
 
-            print("\nPortion Master: Thank you for coming. Come again if you need any portions.")
+            print("\nPotion Master: Thank you for coming. Come again if you need any potions.")
             print("You: Thank you.")
         elif buy == 'both':
-            print("Portion Master: How many of the healing portions would you like to buy?")
-            num1 = input("Enter the number portions you want: ")
-            print("Portion Master: How many of the invisible portions would you like to buy?")
-            num2 = input("Enter the number portions you want: ")
+            print("Potion Master: How many of the healing potions would you like to buy?")
+            num1 = input("Enter the number potions you want: ")
+            print("Potion Master: How many of the invisible potions would you like to buy?")
+            num2 = input("Enter the number potions you want: ")
             money = (10*int(num1)) + (5*int(num2))
-            print("Portion Master: For" + str(num1) + "healing portions and " + str(num2) + "invisible portions, your total is " + str(money) + " jewels.")
-            print("You pay the portion master.\n")
+            print("Potion Master: For" + str(num1) + "healing potions and " + str(num2) + "invisible potions, your total is " + str(money) + " jewels.")
+            print("You pay the potion master.\n")
 
             changejewel(30-money)
-            print("\n And take you portions.\n")
+            print("\n And take you potions.\n")
 
-            changeportion(int(num1) + int(num2))
+            changepotion(int(num1) + int(num2))
 
-            print("\nPortion Master: Thank you for coming. Come again if you need any portions.")
+            print("\nPotion Master: Thank you for coming. Come again if you need any potions.")
             print("You: Thank you.")
     else:
         print("--You continue to head to the capital.--");
@@ -379,12 +380,12 @@ print("+ + + + + + + + + + + + + + + + + + + + + + + + \n")
 print("--Now you have entered the Bubun village, it seems full of beautiful greenery and flowers.--")
 print("--As you continue to move inside the village, all you see are dead withered plants and lifeless grounds.--")
 print("--You see two demons having a conversation. You approach them and overhear...--")
-print("Worker 1: This is just impossible! We try so hard to grow plants for making portion but they all wither! Damn that cursed demon!")
+print("Worker 1: This is just impossible! We try so hard to grow plants for making potion but they all wither! Damn that cursed demon!")
 print("Worker 2: If this continues the demon world is soon to end. Aren't the capital aware of that cursed demon. They should be sending someone who can bring that red lotus...")
 
 print("\nYou: Sorry to interrupt. Could you tell me why the surrounding here seems withered?")
 print("Worker 1: Don't you know! It's the cursed demon's rampage! everything she touches, dies!")
-print("Worker 2: She was actually a worker here who unknowingly drunk her own experimented portion that went wrong. We need someone who can go to the pixis' den to get the red lotus. it's the only way to save her and this world.")
+print("Worker 2: She was actually a worker here who unknowingly drunk her own experimented potion that went wrong. We need someone who can go to the pixis' den to get the red lotus. it's the only way to save her and this world.")
 print("You: What is the red lotus for?")
 print("-----------------------")
 print("        (\/\/)       ")
@@ -401,10 +402,10 @@ print("You: I'll go! I will help you. Where is the pixis' den?")
 print("Worker 1: Really! You can do it!")
 print("Worker 2: You walk straight on this path and it will lead you to the Wind forest. As you walk inside, there on the left side you will see the pixis' den.")
 print("You: I'll try my best.")
-print("Worker 2: The pixis are vicious creatures, but we have no choice. Here are 5 sleeping portions. Make sure the vapour of the portions spreads thoroughly without you inhaling it. Good luck!")
-input("To accept 5 sleeping portions type 'take': \n")
+print("Worker 2: The pixis are vicious creatures, but we have no choice. Here are 5 sleeping potions. Make sure the vapour of the potions spreads thoroughly without you inhaling it. Good luck!")
+input("To accept 5 sleeping potions type 'take': \n")
 
-changeportion(amount[2]+5)
+changepotion(amount[2]+5)
 
 input("\nPress enter to continue: ")
 print("--You started to walk straight ahead on this path. After minutes of walk you see the forest.--")
@@ -424,12 +425,12 @@ print("   | | | | | | |  | | | |         __(                        )")
 print("   | | | | | | |  | | | |     ^^^(                 *******    )___")
 print("   | | | | | | |  | | | |  /\/\/\(               */\/\/\/\/\/\/\/\)")
 print("++++++=++++++++++++++========+++++++++++++++=========+++++++++++")
-print("--Finally, you found it. You slowly cover your nose and take out one of the sleeping portions.--")
-input("To use one sleeping portion write 'use': \n")
+print("--Finally, you found it. You slowly cover your nose and take out one of the sleeping potions.--")
+input("To use one sleeping potion write 'use': \n")
 
-changeportion(amount[2]-1)
+changepotion(amount[2]-1)
 
-print("\n--You use the sleeping portion on the pixis at the entrance and they fall asleep.--")
+print("\n--You use the sleeping potion on the pixis at the entrance and they fall asleep.--")
 print("--You carefully walk across the entrance and look for the red lotus, but few pixis comes out from the inside.--")
 print("--Pixis fiercely attack you with their stink. You have to hurry and make a decision.--")
 fight = ['attack', 'dodge']
@@ -440,18 +441,18 @@ if choice == 'attack':
     print("--You killed the attacking pixis.--")
     print("--Now, You decide to go far inside the den to search for the red lotus.--")
 elif choice == 'dodge':
-    print("--You dodge the attacking pixis and use another sleeping portion.--")
-    input("To use another sleeping portion write 'use': \n")
+    print("--You dodge the attacking pixis and use another sleeping potion.--")
+    input("To use another sleeping potion write 'use': \n")
 
-    changeportion(amount[2]-1)
+    changepotion(amount[2]-1)
     print("\n--The pixis fell on the ground and started to sleep.--")
     print("--Now, You decide to go far inside the den to search for the red lotus.--")
 
 print("--As you walk inside in stealth motion, you see a large number of pixis surrounding a corner.--")
-print("--Therefore, you decide to use another sleeping portion.--")
-input("To use another sleeping portion write 'use': \n")
+print("--Therefore, you decide to use another sleeping potion.--")
+input("To use another sleeping potion write 'use': \n")
 
-changeportion(amount[2]-1)
+changepotion(amount[2]-1)
 
 print("\n--All the pixis have fallen asleep and you see the red lotus in a corner.--")
 input("To pluck the red lotus write 'pluck': ")
@@ -461,17 +462,17 @@ print("--You walk out of the forest to meet the workers from before.--\n")
 print("--You went back and saw one of the workers standing there.--")
 print("You: Hello Sir, i have come back with the red lotus from the pixis' den.")
 print("Worker 2: You have finally come back. At long last this curse will be broken.")
-print("--You give the red lotus to the worker. The workers made a portion for you to use on the cursed demon.--")
-print("Worker 1: Please take this red lotus portion and splash it on the cursed demon, who resides on the barren ground.")
-print("--You take the portion and follow the workers to the barren ground.--")
-changeportion(amount[2]+1)
+print("--You give the red lotus to the worker. The workers made a potion for you to use on the cursed demon.--")
+print("Worker 1: Please take this red lotus potion and splash it on the cursed demon, who resides on the barren ground.")
+print("--You take the potion and follow the workers to the barren ground.--")
+changepotion(amount[2]+1)
 print("--You all see the cursed demon sitting on the barren ground withering all around her.--")
-print("--You approach the demon slowly and take out the red lotus portion.--")
-input("To pour the lotus portion on the cursed demon write 'splash': \n")
+print("--You approach the demon slowly and take out the red lotus potion.--")
+input("To pour the lotus potion on the cursed demon write 'splash': \n")
 
-changeportion(amount[2]-1)
+changepotion(amount[2]-1)
 
-print("\n--After you splashed the portion, the cursed demon screeched and fainted.--")
+print("\n--After you splashed the potion, the cursed demon screeched and fainted.--")
 print("--Few seconds later, the curse is lifted, the demon is back to normal and the lands are turning green.--")
 print("++++++++++++++++++++++++++")
 print("  *   *  *   *   *   *  * ")
@@ -480,11 +481,11 @@ print(" ||  || || || || || || ||")
 print("++++++++++++++++++++++++++")
 input("Press enter to continue: ")
 print("*The workers shouts with joy*")
-print("--The workers are happy and they want to offer 10 jewels and 5 sleeping portions for saving their friend.--")
-input("To accept 15 jewels and 1 sleeping portions write 'accept': \n")
+print("--The workers are happy and they want to offer 10 jewels and 5 sleeping potions for saving their friend.--")
+input("To accept 15 jewels and 1 sleeping potions write 'accept': \n")
 
 changejewel(amount[1]+15)
-changeportion(amount[2]+1)
+changepotion(amount[2]+1)
 
 print("Cured demon: Thank you for helping me. I want you to take this magic stone. it will help you in your journey.")
 print("You: Thank you. I will accept.")
@@ -521,7 +522,7 @@ print("--Many hours gone by, you feel confused about why this is taking a long t
 print("--A sudden halt, the cart stopped moving. You thought you have reached the Capital.--")
 print("--But to your surprise, you look outside to see that it has stopped in an unfamiliar shady forest.--")
 print("--All on a sudden, a group of bandits rush toward the cart and shouting.--")
-print("--Before you can speak, they use sleeping portions.--")
+print("--Before you can speak, they use sleeping potions.--")
 print("--Immediately you fall in deep slumber!--")
 
 print("\n===================")
